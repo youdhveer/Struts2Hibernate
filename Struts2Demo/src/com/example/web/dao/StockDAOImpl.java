@@ -32,7 +32,7 @@ public class StockDAOImpl implements StockDAO {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		session.beginTransaction();
 				
-		String hql = "from stock where stockCode=:stockCode";
+		String hql = "from Stock where stockCode=:stockCode";
 		Query query=session.createQuery(hql);
 		query.setString("stockCode", stockCode);
 		List results = query.list();
