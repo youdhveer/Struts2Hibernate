@@ -4,6 +4,7 @@
 "http://struts.apache.org/dtds/struts-2.0.dtd">
  
 <struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
 	<constant name="struts.custom.i18n.resources" value="global" />
     <constant name="struts.devMode" value="true" />
     
@@ -22,6 +23,15 @@
 		<action name="stocks" class="com.example.web.action.StockAction" method="loadStock">
 			<result name="stockList">pages/stock.jsp</result>
 			<result name="input">pages/stock.jsp</result>
+		</action>
+		
+		<action name="home" class="com.example.web.action.HomeAction" >
+			<result name="success">pages/test.jsp</result>
+			<result name="input">pages/test.jsp</result>
+		</action>
+		<action name="testBoolean" class="com.example.web.action.HomeAction" method="testData">
+			<result name="checkboolean">pages/test.jsp</result>
+			<result name="input">pages/test.jsp</result>
 		</action>
 		
 	</package>
