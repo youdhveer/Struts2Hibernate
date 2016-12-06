@@ -38,19 +38,42 @@
 <h3>Test radio tags.............</h3>
 
 <s:form action="testTag" >
-    <s:iterator value="stockDTOList">
-	  <s:property value="stockCode"/>
-	</s:iterator>
-	<s:radio label="Answer" name="yourAnswer" list="#{'1':'Yes','2':'No'}" value="2" id="selectedOption" />
-		
+   	
+	<div>
+	<h5>
+	  Answer radio options ##  It will create dynamic ids like : selectedOption_1 , selectedOption_2
+	</h5>
+	
+	
+	<s:radio label="Answer" name="yourAnswer" list="#{'1':'Yes','2':'No'}" value="2" id="selectedOption_" />
+	</div>
+	
+	
+	
+	<div>
+	<h5>
+	  Fruit radio options ## It will create dynamic ids like : fruit_BANANA , fruit_APPLE, fruit_ORANGE
+	</h5>
+	
+	 	
 	<s:if test="%{dataMap !=null}">
-		<s:radio label="Data" name="yourData" list="dataMap" value="defaultGenderValue" />
+		<s:radio label="Fruit" name="yourData" list="dataMap" value="data" id="fruit_"  />
 	</s:if>
 	
+	</div>
+	
+	
+	<div>
+	<h5>
+	   Stock radio options ## It will create dynamic ids like : testTag_myStocks1 , testTag_myStocks2, testTag_myStocks3
+	</h5>
+	
 	<s:if test="stockDTOList !=null">
-		 <s:radio label="Stock" name="yourLanguage" list="stockDTOList"
-      listKey="stockId" listValue="stockCode" value="defaultLanguageValue" />
+		 <s:radio label="Stock" name="myStocks" list="stockDTOList"
+      listKey="stockId" listValue="stockCode" value="defaultStock" />
 	</s:if>
+	</div>
+	
 	
 	<s:submit name="submit" value="Submit Data"/>
 </s:form>
