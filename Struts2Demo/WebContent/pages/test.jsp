@@ -35,6 +35,27 @@
 	<s:submit name="submit" value="Submit Data"/>
 </s:form>
 
+<h3>Test radio tags.............</h3>
+
+<s:form action="testTag" >
+    <s:iterator value="stockDTOList">
+	  <s:property value="stockCode"/>
+	</s:iterator>
+	<s:radio label="Answer" name="yourAnswer" list="#{'1':'Yes','2':'No'}" value="2" id="selectedOption" />
+		
+	<s:if test="%{dataMap !=null}">
+		<s:radio label="Data" name="yourData" list="dataMap" value="defaultGenderValue" />
+	</s:if>
+	
+	<s:if test="stockDTOList !=null">
+		 <s:radio label="Stock" name="yourLanguage" list="stockDTOList"
+      listKey="stockId" listValue="stockCode" value="defaultLanguageValue" />
+	</s:if>
+	
+	<s:submit name="submit" value="Submit Data"/>
+</s:form>
+
+
 <script>
   function testData(){
 	  document.getElementById('adminUser').value=true;

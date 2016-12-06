@@ -31,6 +31,11 @@
 			<result name="success">pages/test.jsp</result>
 			<result name="input">pages/test.jsp</result>
 		</action>
+		<action name="testTag" class="com.example.web.action.HomeAction" method="testRadioTag">
+			<result name="testTag">pages/test.jsp</result>
+			<result name="input">pages/test.jsp</result>
+		</action>
+		
 		<action name="testBoolean" class="com.example.web.action.HomeAction" method="testData">
 			<result name="checkboolean">pages/test.jsp</result>
 			<result name="input">pages/test.jsp</result>

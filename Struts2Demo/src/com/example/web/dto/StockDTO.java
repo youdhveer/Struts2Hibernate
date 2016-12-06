@@ -7,6 +7,11 @@ public class StockDTO {
 	private String  stockName;
 	private String  companyName;
 	
+	public StockDTO(){}
+	public StockDTO(int stockId, String stockCode){
+		this.stockId=stockId;
+		this.stockCode=stockCode;
+	}
 	
 	@Override
 	public String toString() {
