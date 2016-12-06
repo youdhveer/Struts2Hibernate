@@ -23,7 +23,7 @@ public class LoginAction extends ActionSupport implements ModelDriven<LoginDTO>{
 	public void validate(){
 		//String user="";
 		if(loginDTO !=null){
-			if("youdhveer".equals(loginDTO.getUsername())){
+			if("youdhveer".equals(loginDTO.getUserName())){
 				addActionMessage("You are valid user!");
 			}else{
 				addActionError("I don't know you, dont try to hack me!");

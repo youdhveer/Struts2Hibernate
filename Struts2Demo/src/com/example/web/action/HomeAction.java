@@ -1,14 +1,14 @@
 package com.example.web.action;
 
-import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServletRequest;
+import java.util.Map;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-public class HomeAction extends BaseAction{
+public class HomeAction extends ActionSupport{
 	
 	private boolean adminUser;
 	private String userName;
+	private Map<String,String> dataMap;
 	
 	public String execute(){
 		
@@ -21,6 +21,14 @@ public class HomeAction extends BaseAction{
 		
 		
 		return "checkboolean";
+	}
+
+	
+	public String testRadioTag(){		
+		System.out.println("here ..........testData...adminUser : "+" and userName :"+userName);
+		
+		
+		return "testTag";
 	}
 
 	public boolean isAdminUser() {
